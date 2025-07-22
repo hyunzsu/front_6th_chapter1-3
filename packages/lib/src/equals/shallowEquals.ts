@@ -14,8 +14,8 @@ export function shallowEquals(objA: unknown, objB: unknown): boolean {
   const typeB = typeof objB;
 
   if (typeA !== typeB) return false;
-  if (typeA !== "object") return false; // 원시 타입은 종료
   if (objA === null || objB === null) return false; // null 체크
+  if (typeA !== "object") return false; // 원시 타입은 종료
 
   // 3단계: 객체로 타입 단언
   const recordA = objA as Record<string, unknown>;
